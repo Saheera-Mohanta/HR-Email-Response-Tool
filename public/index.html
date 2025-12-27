@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HR Email Response Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>HR Email Response Tool</h2>
+
+    <form id="emailForm" onsubmit="return previewEmail(event)">
+      <label>Candidate Name</label>
+      <input type="text" id="candidate_name" required>
+
+      <label>Candidate Email</label>
+      <input type="email" id="candidate_email" required>
+
+      <label>Position Applied</label>
+      <input type="text" id="position" required>
+
+      <label>Status</label>
+
+      <div class="radio-group">
+        <label class="radio-item">
+          <input type="radio" name="status" value="selected" required>
+          Selected
+        </label>
+
+        <label class="radio-item">
+          <input type="radio" name="status" value="rejected">
+          Rejected
+        </label>
+      </div>
+
+      <button type="submit">Preview Email</button>
+    </form>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal">
+    <div class="modal-content">
+      <h3>Email Preview</h3>
+      <pre id="previewText"></pre>
+      <button onclick="sendMail()">Send Email</button>
+      <button onclick="closePreview()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
